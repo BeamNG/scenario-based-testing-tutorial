@@ -22,34 +22,39 @@ def copy_traffic_config_files(dest_dir: Path):
 def main():
     set_up_simple_logging()
     beamng = BeamNGpy("localhost", 25252)
-    bng = beamng.open()
+    try:
+        bng = beamng.open(launch = True)
 
-    # we need to copy the configuration files to the user path
-    destination_path = Path(bng.user_with_version)
-    copy_traffic_config_files(destination_path)
-    print(f"Copied traffic configuration to {destination_path}.")
-    # Change version number (0.35) to X.XX if it is different from the current one.
-    traffic = TrafficConfig(bng, "/0.35/traffic_config_example.json")
-    # With TrafficConfig.vehicles[vehicle name set from traffic configuration] you can access the related Vehicle object
-    veh_sensors = VehicleSensorConfig(
-        "vehicle_sensors",
-        bng,
-        traffic.vehicles["thePlayer"],
-        "/veh_sensors2.json",
-    )
-
-
-    for _ in range(20):
-        sleep(1)
-        for s in range(len(veh_sensors.sensors)):
-            sensor = veh_sensors.sensors[s]
-            print(sensor.name)
-            print(sensor.poll())
+        # we need to copy the configuration files to the user path
+        destination_path = Path(bng.user_with_version)
+        copy_traffic_config_files(destination_path)
+        print(f"Copied traffic configuration to {destination_path}.")
+        # Change version number (0.35) to X.XX if it is different from the current one.
+        traffic = TrafficConfig(bng, "/0.35/traffic_config_example.json")
+        # With TrafficConfig.vehicles[vehicle name set from traffic configuration] you can access the related Vehicle object
+        veh_sensors = VehicleSensorConfig(
+            "vehicle_sensors",
+            bng,
+            traffic.vehicles["thePlayer"],
+            "/veh_sensors2.json",
+        )
 
 
-    veh_sensors.remove()
-    print("Example finished.")
-    bng.disconnect()
+        for _ in range(20):
+            sleep(1)
+            for s in range(len(veh_sensors.sensors)):
+                sensor = veh_sensors.sensors[s]
+                print(sensor.name)
+                print(sensor.poll())
+
+
+        veh_sensors.remove()
+        print("Example finished.")
+    finally:
+        try:
+            beamng.close()
+        except:
+            pass
 
 
 if __name__ == "__main__":

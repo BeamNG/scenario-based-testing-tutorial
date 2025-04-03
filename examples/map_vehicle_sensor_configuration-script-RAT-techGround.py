@@ -66,67 +66,70 @@ def main():
     set_up_simple_logging()
 
     beamng = BeamNGpy("localhost", 25252)
-    bng = beamng.open(launch=True)
+    try:
+        bng = beamng.open(launch=True)
 
-    # we need to copy the configuration files to the user path
-    destination_path = Path(bng.user_with_version)
-    copy_level_folder(destination_path / "levels/tech_ground")
-    print(f"Copied level configuration to {destination_path}.")
-    copy_traffic_config_files(destination_path)
-    print(f"Copied traffic configuration to {destination_path}.")
+        # we need to copy the configuration files to the user path
+        destination_path = Path(bng.user_with_version)
+        copy_level_folder(destination_path / "levels/tech_ground")
+        print(f"Copied level configuration to {destination_path}.")
+        copy_traffic_config_files(destination_path)
+        print(f"Copied traffic configuration to {destination_path}.")
 
-    scenario = Scenario(
-        "tech_ground",
-        "MapAndVehicleSensorConfig",
-        description="Importing a pre-made ADAS sensor suite.",
-    )
+        scenario = Scenario(
+            "tech_ground",
+            "MapAndVehicleSensorConfig",
+            description="Importing a pre-made ADAS sensor suite.",
+        )
 
-    vehicle = Vehicle("ego_vehicle", model="etk800", license="ADASConfig")
+        vehicle = Vehicle("ego_vehicle", model="etk800", license="ADASConfig")
 
-    scenario.add_vehicle(
-        vehicle, pos=(128.0, 128.0, 0.206), rot_quat=(0, 0, 0.3826834, 0.9238795))
-    scenario.make(bng)
-    # vehicle, pos=(158.787, 99.926, 0.206), rot_quat=(0, 0, 0.3826834, 0.9238795))
-    bng.settings.set_deterministic(60)  # Set simulator to 60hz temporal resolution
+        scenario.add_vehicle(
+            vehicle, pos=(128.0, 128.0, 0.206), rot_quat=(0, 0, 0.3826834, 0.9238795))
+        scenario.make(bng)
+        # vehicle, pos=(158.787, 99.926, 0.206), rot_quat=(0, 0, 0.3826834, 0.9238795))
+        bng.settings.set_deterministic(60)  # Set simulator to 60hz temporal resolution
 
-    bng.scenario.load(scenario)
-    bng.ui.hide_hud()
-    bng.scenario.start()
+        bng.scenario.load(scenario)
+        bng.ui.hide_hud()
+        bng.scenario.start()
 
-    #  vehicle.ai.set_mode("traffic")
-    vehicle.ai.set_script(myscript)
+        #  vehicle.ai.set_mode("traffic")
+        vehicle.ai.set_script(myscript)
 
-    # Path to config file is relative to user folder ie: /AppData/Local/BeamNG.drive/0.XX/
-    config = VehicleSensorConfig("configV", bng, vehicle, "/vehicle_sensors_techground.json")
+        # Path to config file is relative to user folder ie: /AppData/Local/BeamNG.drive/0.XX/
+        config = VehicleSensorConfig("configV", bng, vehicle, "/vehicle_sensors_techground.json")
 
-    # Path to config file is relative to user folder ie: /AppData/Local/BeamNG.drive/0.XX/
-    config2 = MapSensorConfig("configM", bng, "/techground_map_sensor_config.json")
+        # Path to config file is relative to user folder ie: /AppData/Local/BeamNG.drive/0.XX/
+        config2 = MapSensorConfig("configM", bng, "/techground_map_sensor_config.json")
 
-    print("Driving around, polling all sensors of the configuration periodically...")
-    for _ in range(20):
-        sleep(1)
-        for s in range(len(config.sensors)):
-            sensor = config.sensors[s]
-            print(sensor.name)
-            print(sensor.poll())
+        print("Driving around, polling all sensors of the configuration periodically...")
+        for _ in range(20):
+            sleep(1)
+            for s in range(len(config.sensors)):
+                sensor = config.sensors[s]
+                print(sensor.name)
+                print(sensor.poll())
 
-    config.remove()
+        config.remove()
 
-    for _ in range(20):
-        sleep(1)
-        for s in range(len(config2.sensors)):
-            sensor = config2.sensors[s]
-            print(sensor.name)
-            print(sensor.poll())
+        for _ in range(20):
+            sleep(1)
+            for s in range(len(config2.sensors)):
+                sensor = config2.sensors[s]
+                print(sensor.name)
+                print(sensor.poll())
 
-    config2.remove()
-    print("Scenario finished.")
-    bng.ui.show_hud()
-    input("Press Enter to exit...")
-    bng.disconnect()
+        config2.remove()
+        print("Scenario finished.")
+        bng.ui.show_hud()
+        input("Press Enter to exit...")
+    finally:
+        try:
+            beamng.close()
+        except:
+            pass
 
-    print("Scenario finished.")
-    input("Press Enter to exit...")
 
 
 if __name__ == "__main__":
