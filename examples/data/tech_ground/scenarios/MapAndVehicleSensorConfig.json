@@ -1,0 +1,1 @@
+[{"difficulty":0,"name":"MapAndVehicleSensorConfig","lapConfig":{},"authors":"BeamNGpy","forceNoCountDown":true,"description":"Importing a pre-made ADAS sensor suite.","vehicles":{"ego_vehicle":{"startFocus":true,"playerUsable":true}},"prefabs":["levels/tech_ground/scenarios/MapAndVehicleSensorConfig.prefab.json"]}]

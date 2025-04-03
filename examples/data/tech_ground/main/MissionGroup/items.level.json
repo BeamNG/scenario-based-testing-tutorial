@@ -1,0 +1,48 @@
+{"name":"PlayerDropPoints","class":"SimGroup","persistentId":"0d6bb99c-26c3-4d16-83ae-0d2bf504c882","__parent":"MissionGroup","enabled":"1"}
+{"name":"Level_objects","class":"SimGroup","persistentId":"9730fe0b-9056-41d3-b689-14acd49a087c","__parent":"MissionGroup"}
+{"name":"Audio","class":"SimGroup","persistentId":"f2719119-f3a3-4c7a-9cfe-e37b25145bfd","__parent":"MissionGroup","locked":true}
+{"name":"CameraBookmarks","class":"SimGroup","persistentId":"f66dbb07-45cb-4fd7-81dd-697c341e2141","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 1","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 2","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 3","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 4","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 5","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 6","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 7","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 8","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 9","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 10","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 11","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 12","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 13","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 14","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 15","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 16","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 17","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 18","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 19","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 20","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 21","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 22","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 23","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 24","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 25","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 26","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 27","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 28","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 29","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 30","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 31","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 32","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 33","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 34","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 35","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 36","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 37","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 38","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 39","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 40","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 41","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 42","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 43","class":"SimGroup","__parent":"MissionGroup"}
+{"name":"Road Architect - Road 44","class":"SimGroup","__parent":"MissionGroup"}

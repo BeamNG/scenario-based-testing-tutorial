@@ -8,7 +8,6 @@ from beamngpy.tools import TrafficConfig
 
 SCRIPT_DIR = Path(__file__).parent.resolve()
 
-
 def copy_traffic_config_files(dest_dir: Path):
     files = [
         "data/traffic_config_example.json",
@@ -29,7 +28,7 @@ def main():
     destination_path = Path(bng.user_with_version)
     copy_traffic_config_files(destination_path)
     print(f"Copied traffic configuration to {destination_path}.")
-    # Change version number (0.35) to X.XX if it is different from the current one. 
+    # Change version number (0.35) to X.XX if it is different from the current one.
     traffic = TrafficConfig(bng, "/0.35/traffic_config_example.json")
     # With TrafficConfig.vehicles[vehicle name set from traffic configuration] you can access the related Vehicle object
     veh_sensors = VehicleSensorConfig(
